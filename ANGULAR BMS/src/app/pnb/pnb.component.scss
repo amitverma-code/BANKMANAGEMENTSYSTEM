@@ -1,0 +1,38 @@
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid rgb(52, 65, 189);
+  padding: 10px;
+}
+input[type=text] {
+  border: 2px solid rgb(52, 65, 189);
+  border-radius: 4px;
+  width: 100%;
+padding: 12px 20px;
+//margin: 8px 0;
+box-sizing: border-box;
+}
+h4{
+  color: rgb(52, 65, 189);
+}
+label{
+  font-size: 15px;
+  color: rgb(52, 65, 189);
+}
+a{  
+  font-size: 15px;
+  color: rgb(52, 65, 189);
+}
+button[type=submit] {
+  align-content: center;
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: rgb(52, 65, 189);
+  padding: 12px 28px;
+  
+}
+mat-radio-button{
+  
+  font-size: 15px;
+  color: rgb(52, 65, 189);
+}

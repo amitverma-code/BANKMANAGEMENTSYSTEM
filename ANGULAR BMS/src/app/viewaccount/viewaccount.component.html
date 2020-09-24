@@ -1,0 +1,23 @@
+<br>
+<div class ="center">
+    <div>
+      <table class="table">
+        <tr style="color:#198be7;">
+            <th>ACCOUNT ID</th>
+            <th>ACCOUNT NUMBER</th>
+            <th>IFSC CODE</th>
+            <th>ACCOUNT NAME</th>
+            <th>MICR CODE</th>
+            <th>PAN</th>
+        </tr>
+        <tr *ngFor="let comp of account">
+            <th>{{comp.id}}</th>
+            <td>{{comp.accountNumber}}</td>
+            <td>{{comp.ifscCode}}</td>
+            <td>{{comp.accountName}}</td>
+            <td>{{comp.micrCode}}</td>
+            <td>{{comp.pan}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>

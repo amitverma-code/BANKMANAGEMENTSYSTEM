@@ -1,0 +1,14 @@
+a {
+    visibility: visible;
+    font-size: 15px;
+
+  }
+  .center {
+      background-color: #198be7;
+    margin: auto;
+    border: 3px solid #198be7;
+    padding: 10px;
+  }
+  .log{
+    margin-left: 200px;
+  }

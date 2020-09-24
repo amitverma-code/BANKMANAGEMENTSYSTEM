@@ -1,0 +1,22 @@
+
+  <br>
+  <div class="center">
+  <div>
+    <a>Select The Account Number : </a><br><br>
+    <mat-radio-group aria-label="select" [(ngModel)]="rdoSeason">
+      <div *ngFor= "let account of accAr">
+        <mat-radio-button value={{account}}> {{account}} </mat-radio-button><br>
+      </div>
+    </mat-radio-group>
+       <div><a>Account Selected : {{rdoSeason}}</a></div>
+       <br>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Enter Amount You Want To Buy : </label>
+      <input type="text" class="form-control" id="amountToInvest" required [(ngModel)]="buyMutual.amountToInvest" name="amountToInvest">
+    </div>
+<br>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+</div>

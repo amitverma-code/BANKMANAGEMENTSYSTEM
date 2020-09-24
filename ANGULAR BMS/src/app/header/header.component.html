@@ -1,0 +1,18 @@
+<div class="center">
+<mat-toolbar colour= "red">
+    <mat-toolbar-row>
+        <span><a mat-button href="" style="font-size: larger;">Bank Management System</a></span>
+        <span class="example-fill-remaining-space"></span>
+        <span class="align-center"></span>
+        <span class="example-spacer"></span>
+        <a mat-button *ngIf="loginService.isUserLoggedIn()" routerLink="/user" class="nav-link">Your Details</a>
+        <a mat-button *ngIf="loginService.isUserLoggedIn()" routerLink="/viewaccount" class="nav-link">View Account</a>
+        <a mat-button *ngIf="loginService.isUserLoggedIn()" routerLink="/addaccount" class="nav-link">Add Account</a>
+        <a mat-button *ngIf="loginService.isUserLoggedIn()" routerLink="/viewmutualfund" class="nav-link">Mutual Fund</a>
+        <a mat-button *ngIf="loginService.isUserLoggedIn()" routerLink="/mutualname" class="nav-link">Buy Mutual Fund</a>
+       <div class="log">
+        <a style="color:rgb(1, 60, 253);font-size:12px;" mat-button *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Logout</a>
+    </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+</div>

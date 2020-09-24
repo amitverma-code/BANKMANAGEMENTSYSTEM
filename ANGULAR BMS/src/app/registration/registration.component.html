@@ -1,0 +1,106 @@
+<br>
+<br>
+<div class="center">
+  <div class="alert alert-danger text-center" *ngIf="errorMsg">{{errorMsg}}</div>
+<h2 [class.d-none]="submit" style="text-decoration: underline;" class="text-center">New User Form</h2>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="!submit" novalidate>
+    <div class="form-group">
+      <label>User Name</label>
+      <input type="text" class="form-control" id="username" [(ngModel)]="user.username" name="username" 
+      #userName1="ngModel" [class.is-invalid]="userName1.invalid && userName1.touched" required >
+      <small class="text-danger" [class.d-none]="userName1.valid || userName1.untouched">user name is
+        required</small>
+    </div>
+    
+    <div class="form-group">
+      <label>Password</label>
+      <input type="text" class="form-control" required [(ngModel)]="user.password" name="password"
+        #password1="ngModel" [class.is-invalid]="password1.invalid && password1.touched"
+        pattern="[a-zA-Z0-9]{6}[a-zA-Z0-9]*">
+      <small class="text-danger" [class.d-none]="password1.valid || password1.untouched">password is required</small>
+      <div *ngIf="password1.errors && (password1.invalid || password1.touched)">
+        <small class="text-danger" *ngIf="password1.errors.required" [class.d-none]="password1.untouched">password is
+          required</small>
+        <small class="text-danger" *ngIf="password1.errors.pattern">password must be alphanumeric atleast length
+          6</small>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" class="form-control" required [(ngModel)]="user.firstName" name="firstName"
+        #firstName1="ngModel" [class.is-invalid]="firstName1.invalid && firstName1.touched"
+        pattern="[a-zA-Z]*">
+      <small class="text-danger" [class.d-none]="firstName1.valid || firstName1.untouched">First Name is required</small>
+      <div *ngIf="firstName1.errors && (firstName1.invalid || firstName1.touched)">
+        <small class="text-danger" *ngIf="firstName1.errors.required" [class.d-none]="firstName1.untouched">First Name Is
+          Required</small>
+        <small class="text-danger" *ngIf="firstName1.errors.pattern">Name Must Contain Alpha Only </small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" class="form-control" required [(ngModel)]="user.lastName" name="lastName"
+        #lastName1="ngModel" [class.is-invalid]="lastName1.invalid && lastName1.touched"
+        pattern="[a-zA-Z]*">
+      <small class="text-danger" [class.d-none]="lastName1.valid || lastName1.untouched">Last Name is required</small>
+      <div *ngIf="lastName1.errors && (lastName1.invalid || lastName1.touched)">
+        <small class="text-danger" *ngIf="lastName1.errors.required" [class.d-none]="lastName1.untouched">Last Name Is
+          Required</small>
+        <small class="text-danger" *ngIf="lastName1.errors.pattern">Name Must Contain Alpha Only </small>
+      </div>
+    </div>
+           
+    <div class="form-group">
+      <label>Pan Number</label>
+      <input type="text" class="form-control" required [(ngModel)]="user.pan" name="pan" #pan1="ngModel"
+        [class.is-invalid]="pan1.invalid && pan1.touched" pattern="[A-Z]{5}[0-9]{4}[A-Z]">
+
+      <div *ngIf="pan1.errors && (pan1.invalid || pan1.touched)">
+        <small class="text-danger" *ngIf="pan1.errors.required" [class.d-none]="pan1.untouched">Pan Number Is
+          Required</small>
+        <small class="text-danger" *ngIf="pan1.errors.pattern">Please Provide Valid Pan Number For Example XXXXX0000X</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" required [(ngModel)]="user.email" name="email"
+        #email1="ngModel" [class.is-invalid]="email1.invalid && email1.touched"
+        pattern="[a-zA-Z0-9][a-zA-Z0-9_.]*@[a-zA-Z0-9]+([.][a-zA-Z]+)+">
+        <div *ngIf="email1.errors && (email1.invalid || email1.touched)">
+          <small class="text-danger" *ngIf="email1.errors.required" [class.d-none]="email1.untouched">Email Is
+            Required</small>
+          <small class="text-danger" *ngIf="email1.errors.pattern">Provide Valid Email Address</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Contact Number</label>
+        <input type="tel" class="form-control" required [(ngModel)]="user.conntactNumber" name="conntactNumber"
+          #contact1="ngModel" required [class.is-invalid]="contact1.invalid && contact1.touched" pattern="[6-9][0-9]{9}">
+        <div *ngIf="contact1.errors && (contact1.invalid || contact1.touched)">
+          <small class="text-danger" *ngIf="contact1.errors.required" [class.d-none]="contact1.untouched">Contact Number Is
+            Required</small>
+          <small class="text-danger" *ngIf="contact1.errors.pattern">Phone Number Must Be Of 10 Digit</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Date Of Birth</label>
+        <input type="date"  min="1900-01-01" max="2002-12-31" class="form-control" required [(ngModel)]="user.dob" name="dob"
+          #dob1="ngModel" required [class.is-invalid]="dob1.invalid && dob1.touched" >
+        <div *ngIf="dob1.errors && (dob1.invalid || dob1.touched)">
+          <small class="text-danger" *ngIf="dob1.errors.required" [class.d-none]="dob1.untouched">Date of Birth Is
+            Required</small>
+          <small class="text-danger" *ngIf="dob1.errors.pattern">Date of Birth Must Be In Format MM/DD/YYYY </small>
+        </div>
+      </div>
+<div>
+  <button class="btn btn-primary" type="submit" [disabled]="userForm.form.invalid">submit</button>
+</div>
+  </form>
+  <br>
+  <a  href="/login">Already Have Account? Login Here</a>
+</div>
+<br>

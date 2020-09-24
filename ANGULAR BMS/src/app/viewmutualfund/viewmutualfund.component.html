@@ -1,0 +1,24 @@
+<br>
+<br>
+<div class="center">
+<div>
+      <table class="table">
+        <tr style="color:#198be7;">
+            <th>TRANSACTION ID</th>
+            <th>MUTUAL FUND NAME</th>
+            <th>ACCOUNT NUMBER</th>
+            <th>PAN</th>
+            <th>AMOUNT</th>
+            <th>TIME</th>
+        </tr>
+        <tr *ngFor="let comp of mutualDetails">
+            <th>{{comp.transactionId}}</th>
+            <td>{{comp.mFund}}</td>
+            <td>{{comp.accountNumber}}</td>
+            <td>{{comp.pan}}</td>
+            <td>{{comp.amountToInvest}}</td>
+            <td>{{comp.instant}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>

@@ -1,0 +1,27 @@
+<br>
+<br>
+<div class="center">
+      <table class="table">
+        <tr style="color:#198be7;">
+            <th>USER ID</th>
+            <th>USERNAME</th>
+            <th>FIRST NAME</th>
+            <th>LAST NAME</th>
+            <th>PAN NUMBER</th>
+            <th>EMAIL</th>
+            <th>CONTACT NUMBER</th>
+            <th>DOB</th>
+        </tr>
+        <tr *ngFor="let comp of user">
+            <th>{{comp.id}}</th>
+            <td>{{comp.username}}</td>
+            <td>{{comp.firstName}}</td>
+            <td>{{comp.lastName}}</td>
+            <td>{{comp.pan}}</td>
+            <td>{{comp.email}}</td>
+            <td>+91-{{comp.conntactNumber}}</td>
+            <td>{{comp.dob}}</td>
+         
+        </tr>
+      </table>
+    </div>
